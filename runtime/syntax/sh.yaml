@@ -1,7 +1,7 @@
 filetype: shell
 
 detect:
-    filename: "(\\.sh$|\\.bash|\\.ash|\\.bashrc|bashrc|\\.bash_aliases|bash_aliases|\\.bash_functions|bash_functions|\\.bash_profile|bash_profile|\\.profile|profile|Pkgfile|pkgmk.conf|profile|rc.conf|PKGBUILD|.ebuild\\$|APKBUILD)"
+    filename: "(\\.sh$|\\.bash|\\.ash|bashrc|bash_aliases|bash_functions|profile|bash-fc\\.|Pkgfile|pkgmk.conf|rc.conf|PKGBUILD|.ebuild\\$|APKBUILD)"
     header: "^#!.*/(env +)?(ba)?(a)?sh( |$)"
 
 rules:
@@ -20,8 +20,8 @@ rules:
     - statement: "--[a-z-]+"
     - statement: "\\ -[a-z]+"
 
-    - identifier: "\\$\\{?[0-9A-Z_!@#$*?-]+\\}?"
-    - identifier: "\\$\\{?[0-9A-Z_!@#$*?-]+\\}?"
+    - identifier: "\\$\\{?[0-9A-Za-z_!@#$*?-]+\\}?"
+    - identifier: "\\$\\{?[0-9A-Za-z_!@#$*?-]+\\}?"
 
     - constant.string:
         start: "\""
